@@ -1,0 +1,172 @@
+<resources>
+    <string name="app_name">TeleDrive Sky</string>
+    <string name="app_description">Cloud Storage berbasis Telegram</string>
+
+    <!-- Auth -->
+    <string name="login_title">Masuk ke TeleDrive</string>
+    <string name="login_subtitle">Kelola file cloud Anda</string>
+    <string name="email_label">Email</string>
+    <string name="email_hint">nama@email.com</string>
+    <string name="password_label">Kata Sandi</string>
+    <string name="password_hint">Minimal 6 karakter</string>
+    <string name="login_button">Masuk</string>
+    <string name="register_button">Daftar Sekarang</string>
+    <string name="no_account">Belum punya akun?</string>
+    <string name="have_account">Sudah punya akun?</string>
+    <string name="name_label">Nama Lengkap</string>
+    <string name="name_hint">Masukkan nama Anda</string>
+    <string name="register_title">Buat Akun Baru</string>
+    <string name="register_subtitle">Bergabung dan mulai simpan file Anda</string>
+    <string name="logout">Keluar</string>
+
+    <!-- File Browser -->
+    <string name="files_title">File Saya</string>
+    <string name="home_title">Beranda</string>
+    <string name="starred_title">Favorit</string>
+    <string name="trash_title">Sampah</string>
+    <string name="settings_title">Pengaturan</string>
+    <string name="search_hint">Cari file...</string>
+    <string name="search_title">Pencarian</string>
+    <string name="empty_folder">Folder ini kosong</string>
+    <string name="empty_starred">Belum ada file favorit</string>
+    <string name="empty_trash">Tempat sampah kosong</string>
+    <string name="empty_search">Tidak ada file yang ditemukan</string>
+    <string name="loading">Memuat...</string>
+    <string name="retry">Coba Lagi</string>
+    <string name="cancel">Batal</string>
+    <string name="confirm">Konfirmasi</string>
+    <string name="delete">Hapus</string>
+    <string name="rename">Ganti Nama</string>
+    <string name="move">Pindahkan</string>
+    <string name="download">Unduh</string>
+    <string name="share">Bagikan</string>
+    <string name="star">Tandai</string>
+    <string name="unstar">Hapus Tanda</string>
+    <string name="restore">Pulihkan</string>
+    <string name="delete_permanent">Hapus Permanen</string>
+    <string name="new_folder">Folder Baru</string>
+    <string name="upload_file">Unggah File</string>
+    <string name="folder_name_hint">Nama folder</string>
+    <string name="select_all">Pilih Semua</string>
+    <string name="sort_by">Urutkan</string>
+    <string name="filter_by">Filter</string>
+    <string name="view_list">Tampilan List</string>
+    <string name="view_grid">Tampilan Grid</string>
+    <string name="offline_mode">Mode Offline — Data mungkin tidak terbaru</string>
+    <string name="data_stale">Data lebih dari 24 jam. Perbarui koneksi.</string>
+
+    <!-- Sort options -->
+    <string name="sort_name_az">Nama A–Z</string>
+    <string name="sort_name_za">Nama Z–A</string>
+    <string name="sort_date_newest">Terbaru</string>
+    <string name="sort_date_oldest">Terlama</string>
+    <string name="sort_size_largest">Terbesar</string>
+    <string name="sort_size_smallest">Terkecil</string>
+
+    <!-- Filter options -->
+    <string name="filter_all">Semua</string>
+    <string name="filter_photos">Foto</string>
+    <string name="filter_videos">Video</string>
+    <string name="filter_documents">Dokumen</string>
+    <string name="filter_audio">Audio</string>
+    <string name="filter_archives">Arsip</string>
+
+    <!-- Upload -->
+    <string name="upload_title">Mengunggah</string>
+    <string name="upload_progress">%1$d%%</string>
+    <string name="upload_speed">%1$s/s</string>
+    <string name="upload_complete">Unggahan selesai</string>
+    <string name="upload_failed">Unggahan gagal</string>
+    <string name="upload_paused">Unggahan dijeda</string>
+    <string name="uploading_file">Mengunggah %1$s</string>
+    <string name="files_uploading">%1$d file sedang diunggah</string>
+
+    <!-- Download -->
+    <string name="download_title">Mengunduh</string>
+    <string name="download_complete">Unduhan selesai</string>
+    <string name="download_failed">Unduhan gagal</string>
+    <string name="downloading_file">Mengunduh %1$s</string>
+    <string name="open_file">Buka File</string>
+
+    <!-- Share -->
+    <string name="share_link_title">Bagikan File</string>
+    <string name="share_link_created">Link berhasil dibuat</string>
+    <string name="share_link_copied">Link tersalin ke clipboard</string>
+    <string name="share_link_revoked">Link berhasil dihapus</string>
+    <string name="share_link_downloads">%1$d unduhan</string>
+    <string name="share_link_expires">Kedaluwarsa: %1$s</string>
+    <string name="share_link_no_expiry">Tidak ada kedaluwarsa</string>
+    <string name="copy_link">Salin Link</string>
+    <string name="revoke_link">Hapus Link</string>
+    <string name="expiry_days">Hari kedaluwarsa</string>
+
+    <!-- Storage -->
+    <string name="storage_title">Penyimpanan</string>
+    <string name="storage_used">%1$s digunakan</string>
+    <string name="storage_files">%1$d file</string>
+    <string name="storage_photos">Foto</string>
+    <string name="storage_videos">Video</string>
+    <string name="storage_documents">Dokumen</string>
+    <string name="storage_others">Lainnya</string>
+
+    <!-- Trash -->
+    <string name="move_to_trash">Pindah ke Sampah</string>
+    <string name="confirm_delete">Yakin hapus \"%1$s\"?</string>
+    <string name="confirm_delete_permanent">Hapus \"%1$s\" secara permanen? Tindakan ini tidak dapat dibatalkan.</string>
+    <string name="confirm_delete_batch">Hapus %1$d item yang dipilih?</string>
+    <string name="confirm_restore">Pulihkan \"%1$s\" ke folder asalnya?</string>
+
+    <!-- Security -->
+    <string name="app_lock_title">Kunci Aplikasi</string>
+    <string name="app_lock_subtitle">Lindungi akses dengan biometrik atau PIN</string>
+    <string name="biometric_prompt_title">Verifikasi Identitas</string>
+    <string name="biometric_prompt_subtitle">Gunakan biometrik untuk membuka TeleDrive Sky</string>
+    <string name="biometric_prompt_cancel">Gunakan PIN</string>
+    <string name="pin_title">Masukkan PIN</string>
+    <string name="pin_setup_title">Buat PIN Baru</string>
+    <string name="pin_confirm_title">Konfirmasi PIN</string>
+    <string name="pin_mismatch">PIN tidak cocok. Ulangi dari awal.</string>
+    <string name="pin_wrong">PIN salah. %1$d percobaan tersisa.</string>
+    <string name="pin_locked">Terlalu banyak percobaan. Coba lagi dalam %1$d detik.</string>
+    <string name="enable_app_lock">Aktifkan Kunci Aplikasi</string>
+    <string name="change_pin">Ubah PIN</string>
+    <string name="disable_app_lock">Nonaktifkan Kunci Aplikasi</string>
+
+    <!-- Errors -->
+    <string name="error_network">Koneksi gagal. Periksa internet Anda.</string>
+    <string name="error_timeout">Permintaan habis waktu. Coba lagi.</string>
+    <string name="error_unauthorized">Sesi habis. Silakan masuk kembali.</string>
+    <string name="error_server">Server error. Coba beberapa saat lagi.</string>
+    <string name="error_not_found">File atau folder tidak ditemukan.</string>
+    <string name="error_file_too_large">Ukuran file melebihi batas 2GB.</string>
+    <string name="error_worker_offline">Server penyimpanan sedang offline. Coba lagi nanti.</string>
+    <string name="error_generic">Terjadi kesalahan: %1$s</string>
+    <string name="error_email_used">Email sudah terdaftar.</string>
+    <string name="error_invalid_credentials">Email atau kata sandi salah.</string>
+    <string name="error_invalid_email">Format email tidak valid.</string>
+    <string name="error_password_too_short">Kata sandi minimal 6 karakter.</string>
+    <string name="error_name_required">Nama tidak boleh kosong.</string>
+    <string name="error_folder_name_required">Nama folder tidak boleh kosong.</string>
+    <string name="error_search_too_short">Ketik minimal 2 karakter untuk mencari.</string>
+
+    <!-- Notifications -->
+    <string name="notification_channel_transfer">Transfer File</string>
+    <string name="notification_channel_transfer_desc">Notifikasi upload dan download file</string>
+    <string name="notification_pause">Jeda</string>
+    <string name="notification_resume">Lanjutkan</string>
+    <string name="notification_cancel">Batal</string>
+    <string name="notification_open">Buka</string>
+
+    <!-- Content descriptions -->
+    <string name="cd_file_icon">Ikon file</string>
+    <string name="cd_folder_icon">Ikon folder</string>
+    <string name="cd_back">Kembali</string>
+    <string name="cd_search">Cari</string>
+    <string name="cd_more_options">Opsi lainnya</string>
+    <string name="cd_star_file">Tandai sebagai favorit</string>
+    <string name="cd_close">Tutup</string>
+    <string name="cd_upload">Unggah file</string>
+    <string name="cd_new_folder">Buat folder baru</string>
+    <string name="cd_sort">Urutkan</string>
+    <string name="cd_filter">Filter</string>
+</resources>
