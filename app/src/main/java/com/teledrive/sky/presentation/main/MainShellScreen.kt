@@ -2,6 +2,7 @@ package com.teledrive.sky.presentation.main
 
 import androidx.compose.animation.*
 import androidx.compose.animation.core.*
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -125,8 +126,9 @@ fun SkyBottomNavigationBar(
             shape = RoundedCornerShape(20.dp),
             color = SkySurfaceElevated,
             shadowElevation = 0.dp,
-            border = ButtonDefaults.outlinedButtonBorder.copy(
-                brush = Brush.horizontalGradient(
+            border = BorderStroke(
+                1.dp,
+                Brush.horizontalGradient(
                     colors = listOf(SkyBorder, SkyBorder.copy(0.5f), SkyBorder)
                 )
             ),

@@ -1,22 +1,22 @@
 package com.teledrive.sky.service
 
-import android.app.*
+import android.app.Notification
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.app.Service
 import android.content.Intent
+import android.os.Build
 import android.os.IBinder
 import androidx.core.app.NotificationCompat
-import com.teledrive.sky.R
-import com.teledrive.sky.presentation.MainActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class TransferForegroundService : Service() {
 
     companion object {
-        const val CHANNEL_ID = "transfer_channel"
+        const val CHANNEL_ID = "teledrive_transfer_channel"
         const val NOTIFICATION_ID = 1001
     }
-
-    override fun onBind(intent: Intent?): IBinder? = null
 
     override fun onCreate() {
         super.onCreate()
@@ -24,35 +24,35 @@ class TransferForegroundService : Service() {
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
-        startForeground(NOTIFICATION_ID, buildNotification("Mempersiapkan transfer..."))
+        val notification = createNotification("Transfer sedang berlangsung...")
+        startForeground(NOTIFICATION_ID, notification)
         return START_STICKY
     }
 
-    private fun buildNotification(text: String): Notification {
-        val pendingIntent = PendingIntent.getActivity(
-            this, 0,
-            Intent(this, MainActivity::class.java),
-            PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
-        )
-        return NotificationCompat.Builder(this, CHANNEL_ID)
-            .setContentTitle("TeleDrive Sky")
-            .setContentText(text)
-            .setSmallIcon(android.R.drawable.ic_menu_upload)
-            .setContentIntent(pendingIntent)
-            .setOngoing(true)
-            .setSilent(true)
-            .build()
-    }
+    override fun onBind(intent: Intent?): IBinder? = null
 
     private fun createNotificationChannel() {
-        val channel = NotificationChannel(
-            CHANNEL_ID,
-            "Transfer File",
-            NotificationManager.IMPORTANCE_LOW,
-        ).apply {
-            description = "Notifikasi upload dan download file"
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val channel = NotificationChannel(
+                CHANNEL_ID,
+                "Transfer File",
+                NotificationManager.IMPORTANCE_LOW
+            ).apply {
+                description = "Notifikasi untuk transfer file"
+                setShowBadge(false)
+            }
+            val manager = getSystemService(NotificationManager::class.java)
+            manager.createNotificationChannel(channel)
         }
-        val manager = getSystemService(NotificationManager::class.java)
-        manager.createNotificationChannel(channel)
+    }
+
+    private fun createNotification(message: String): Notification {
+        return NotificationCompat.Builder(this, CHANNEL_ID)
+            .setContentTitle("TeleDrive Sky")
+            .setContentText(message)
+            .setSmallIcon(android.R.drawable.ic_menu_upload)
+            .setPriority(NotificationCompat.PRIORITY_LOW)
+            .setOngoing(true)
+            .build()
     }
 }

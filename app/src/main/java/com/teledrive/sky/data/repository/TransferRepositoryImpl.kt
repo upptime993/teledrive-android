@@ -15,6 +15,7 @@ import com.teledrive.sky.data.remote.dto.UploadCompleteRequest
 import com.teledrive.sky.domain.model.*
 import com.teledrive.sky.domain.repository.TransferRepository
 import com.teledrive.sky.util.ChunkCalculator
+import com.teledrive.sky.util.ChunkRange
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay

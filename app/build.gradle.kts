@@ -129,6 +129,8 @@ dependencies {
     implementation(libs.retrofit.kotlinx.serialization)
     implementation(libs.okhttp)
     implementation(libs.okhttp.logging)
+    implementation(libs.okhttp.urlconnection)
+    implementation(libs.okhttp.urlconnection)
 
     // Serialization
     implementation(libs.kotlinx.serialization.json)

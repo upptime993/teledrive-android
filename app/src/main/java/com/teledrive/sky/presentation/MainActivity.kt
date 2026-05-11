@@ -5,15 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
-import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.animation.fadeIn
-import androidx.compose.animation.fadeOut
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.runtime.*
-import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -23,8 +15,11 @@ import com.teledrive.sky.presentation.navigation.TeleDriveNavGraph
 import com.teledrive.sky.ui.theme.TeleDriveTheme
 import dagger.hilt.android.AndroidEntryPoint
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.stateIn
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -65,9 +60,16 @@ class MainViewModel @Inject constructor(
     val isLoggedIn = authRepository.isLoggedIn()
         .stateIn(viewModelScope, SharingStarted.Eagerly, null)
 
-    val isLoading: State<Boolean> = derivedStateOf { isLoggedIn.value == null }
-}
+    private val _isLoading = MutableStateFlow(true)
+    val isLoading = _isLoading.asStateFlow()
 
-private val MainViewModel.isLoading: State<Boolean>
-    @Composable
-    get() = remember { derivedStateOf { isLoggedIn.value == null } }
+    init {
+        viewModelScope.launch {
+            isLoggedIn.collect { value ->
+                if (value != null) {
+                    _isLoading.value = false
+                }
+            }
+        }
+    }
+}

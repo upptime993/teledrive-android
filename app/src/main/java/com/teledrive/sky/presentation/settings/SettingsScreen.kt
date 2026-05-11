@@ -1,5 +1,6 @@
 package com.teledrive.sky.presentation.settings
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.icons.Icons
@@ -59,7 +60,7 @@ fun SettingsScreen(onLogout: () -> Unit, viewModel: SettingsViewModel = hiltView
                 modifier = Modifier.fillMaxWidth().padding(16.dp),
                 color = SkySurfaceElevated,
                 shape = SkyShapes.FileCard,
-                border = ButtonDefaults.outlinedButtonBorder,
+                border = BorderStroke(1.dp, SkyBorder),
             ) {
                 Row(
                     modifier = Modifier.padding(16.dp),

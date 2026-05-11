@@ -1,7 +1,5 @@
 package com.teledrive.sky.domain.model
 
-import kotlinx.serialization.Serializable
-
 // ─── Core Domain Models ──────────────────────────────────────────────────────
 
 data class TeleFile(
@@ -114,8 +112,9 @@ data class PaginatedResult<T>(
     val total: Int,
     val page: Int,
     val limit: Int,
-    val hasMore: Boolean get() = (page * limit) < total,
-)
+) {
+    val hasMore: Boolean get() = (page * limit) < total
+}
 
 data class BatchResult(
     val successCount: Int,
@@ -131,12 +130,7 @@ data class FileUpdate(
     val newName: String? = null,
 )
 
-data class ChunkRange(
-    val part: Int,
-    val startByte: Long,
-    val endByte: Long,
-    val size: Long,
-)
+
 
 data class BreadcrumbItem(
     val id: String?,   // null = root

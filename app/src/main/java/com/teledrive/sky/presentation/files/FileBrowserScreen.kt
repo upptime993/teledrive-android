@@ -68,17 +68,17 @@ fun FileBrowserScreen(
     }
 
     val pullState = rememberPullToRefreshState()
-    if (pullState.isRefreshing) {
-        LaunchedEffect(Unit) {
-            viewModel.refresh()
-            pullState.endRefresh()
-        }
-    }
+    var isRefreshing by remember { mutableStateOf(false) }
 
     Box(modifier = Modifier.fillMaxSize().background(SkyBackground)) {
         PullToRefreshBox(
             state = pullState,
-            onRefresh = { viewModel.refresh() },
+            isRefreshing = isRefreshing,
+            onRefresh = {
+                isRefreshing = true
+                viewModel.refresh()
+                isRefreshing = false
+            },
             modifier = Modifier.fillMaxSize(),
         ) {
             Column(modifier = Modifier.fillMaxSize()) {
@@ -290,7 +290,7 @@ private fun FileBrowserTopBar(
                 Spacer(Modifier.height(4.dp))
             }
 
-            Divider(color = SkyDivider, thickness = 0.5.dp)
+            HorizontalDivider(color = SkyDivider, thickness = 0.5.dp)
         }
     }
 }
